@@ -75,14 +75,98 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Logowanie</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .login-container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 320px;
+    }
+
+    h2 {
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    input {
+        width: calc(100% - 20px);
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        text-align: left; /* Tekst wyrównany do lewej */
+        padding-left: 10px; /* Odstęp od lewej krawędzi */
+        outline: none;
+        transition: border-color 0.3s;
+    }
+
+    input:focus {
+        border-color: #007bff;
+    }
+
+    button {
+        width: 100%;
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    button:hover {
+        background: #0056b3;
+    }
+
+    .error {
+        color: red;
+        margin-bottom: 10px;
+    }
+
+    /* Poprawka: placeholdery również wyrównane do lewej */
+    input::placeholder {
+        text-align: left;
+        color: #aaa;
+    }
+</style>
+
+
+
 </head>
 <body>
+<div class="login-container">
     <h2>Panel logowania</h2>
-    <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
+    <?php if (isset($error)) echo "<p class='error'>$error</p>"; ?>
     <form method="POST">
-        Login: <input type="text" name="login" required><br>
-        Hasło: <input type="password" name="password" required><br>
+        <div class="input-group">
+            <input type="text" name="login" placeholder="Login" required>
+            <input type="password" name="password" placeholder="Hasło" required>
+        </div>
         <button type="submit">Zaloguj</button>
     </form>
+</div>
+
 </body>
 </html>
