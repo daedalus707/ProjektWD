@@ -62,7 +62,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user'] = $user['login'];
         $_SESSION['is_admin'] = (bool) $user['is_admin'];
-        header("Location: dashboard.php");
+
+        if ($_SESSION['is_admin']) {
+            header("Location: admin.php");
+        } else {
+            header("Location: user.php");
+        }
         exit;
     } else {
         $error = "Niepoprawne dane logowania!";

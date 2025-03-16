@@ -7,11 +7,7 @@ if (!isset($_SESSION['user'])) {
 
 echo "<h2>Witaj, " . $_SESSION['user'] . "!</h2>";
 
-if ($_SESSION['is_admin']) {
-    echo "<p>Jesteś administratorem!</p>";
-} else {
-    echo "<p>Jesteś zwykłym użytkownikiem.</p>";
-}
+echo "<p>Jesteś Administratorem.</p>";
 
 echo '<a href="logout.php">Wyloguj</a>';
 ?>
