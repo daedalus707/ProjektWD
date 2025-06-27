@@ -68,4 +68,4 @@ Ze względu na właściwości funkcji popytu oraz sposób generowania wykresów:
 
 - Jakub Kreft 18237
 - Tomasz Grzegorek 76982
-- Bartosz Guz
+- Bartosz Guz 76586
